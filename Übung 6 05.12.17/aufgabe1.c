@@ -21,7 +21,7 @@ int main(){
 	p/=100;	
 
 	for(int i=1;i<=n;i++){
-		printf("Jahr: %d Kapital: %.2f\n",i,zinsFormel(k,p,i));
+		printf("Jahr: %d Kapital: %.2lf\n",i,zinsFormel(k,p,i));
 	}
 
 	return(0);
