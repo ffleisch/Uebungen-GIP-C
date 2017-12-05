@@ -1,0 +1,14 @@
+//aufgabe1.c
+//Übung 5 Aufgabe 2 GIP 
+//Felix Fleisch Gruppe Die. 14-18 170945
+a)
+Ausdruck 1: falsch
+Ausdruck 2: wahr    //x nachher abhängig von auswertungsrichtung
+Ausdruck 3: falsch
+Ausdruck 4: falsch  //nach morgansche Regeln
+b)
+Ausdruck 1: m<=10 && n!=9
+Ausdruck 2: !x%5 && !y%5 && !z%5
+Ausdruck 3: (a>=1 && a<=10) || a<-7 
+Ausdruck 4:	1
+
