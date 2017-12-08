@@ -4,37 +4,32 @@
 
 #include<stdio.h>
 #include<math.h>
+#include<time.h>
 
-int isPrime(long num){
-	int isPrime=1;
-	long i=0;
-	while((num-floor(num/i))!=0){
-		i++;
-	}
-	if(i==num){
-		return(1);
-	}else{
-		return(0);
-	}
-}
-
-
-long nextprime(long prime){
-	long out=prime;
-	return(-1);
-
-}
 
 int main() {
-
-	long inp=0;
-
+	
+	clock_t start,end;
+	
+	long inp=0;	
+	
 	printf("Bitte Zahl eingeben:\n");
+	
 	scanf("%ld",&inp);
-	int test=isPrime(inp);
-	//int test=0;		
-	printf("%d\n",test);
-
+	
+	start=clock();
+	
+	long p=2;
+	while(inp>1){
+		while(inp%p){
+			p++;
+		}
+		inp/=p;
+		printf("%ld ",p);
+	}
+	end=clock();
+	
+	printf("\n%lf Sekunden zum Berechnen gebraucht\n",(double)(end-start)/CLOCKS_PER_SEC);
 	return(0);
 }
 
