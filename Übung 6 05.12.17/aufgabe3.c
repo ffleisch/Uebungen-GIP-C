@@ -1,4 +1,4 @@
-//aufgabe2.c
+//aufgabe3.c
 //Übung 6 Aufgabe 3 GIP 
 //Felix Fleisch Gruppe Die. 14-18 170945
 
