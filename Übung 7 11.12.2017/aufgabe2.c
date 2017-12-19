@@ -30,7 +30,7 @@ void printDigits(int number){
 }
 
 int main(){
-	
+	char digits[10][5][4];
 	
 	return(0);
 }
