@@ -11,21 +11,21 @@ int main() {
 	
 	clock_t start,end;
 	
-	long inp=0;	
+	long long inp=0;	
 	
 	printf("Bitte Zahl eingeben:\n");
 	
-	scanf("%ld",&inp);
+	scanf("%lld",&inp);
 	
 	start=clock();
 	
-	long p=2;
+	long long p=2;
 	while(inp>1){
 		while(inp%p){
 			p++;
 		}
 		inp/=p;
-		printf("%ld ",p);
+		printf("%lld ",p);
 	}
 	end=clock();
 	
