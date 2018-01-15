@@ -18,20 +18,23 @@ int linearSearch(int n,int a[],int len){
 
 //TODO debug this shit
 int binarySearch(int n, int a[],int len){
-	int pos =len/2;
-	for(int h=len/2;h>0;h/=2){
-		
-		if(a[pos]>n){
-			pos-=(h+1)/2;
+
+	int ul=len-1;
+	int ll=0;
+	while(ul-ll>0){
+		int p=(int)((ul-ll)/2.0+.5);
+		if(n>=a[ll+p]){
+			ll+=p;
 		}else{
-			pos+=(h+1)/2;
+			ul-=p;
 		}
 	}
-	//if(a[pos]==n){
-		return(pos);
-	//}
+	if(a[ul]==n){
+		return(ul);
+	}else{
+		return(-1);
+	}
 }
-
 void bubbleSort(int a[], int len){
 	for(int i=0;i<len;i++){
 		for(int m=0;m<len-1;m++){
@@ -43,10 +46,10 @@ void bubbleSort(int a[], int len){
 		}
 	}
 }
-
+ 
 int* inpIntArr(int len){
 	int *out=malloc(len*sizeof(int));
-	printf("Bitte Integer eingeben:\n");
+	printf("Bitte Integer-Reihung eingeben:\n");
 	for(int i=0;i<len;i++){
 		scanf("%d",out+i);
 	}
@@ -54,28 +57,33 @@ int* inpIntArr(int len){
 }
 
 void printIntArr(int a[],int l){
+	printf("\n Wert     :");
 	for(int i=0;i<l;i++){
 		printf("%2d ",*(a+i));
 	}
 	printf("\n");
+	printf(" Position :");
 	for(int i=0;i<l;i++){
 		printf("%2d ",i);
 	}
-	printf("\n");
+	printf("\n\n");
 }
 
 int main(){
-	int len=9;
-	//printf("Bitte Anzahl Eingeben:\n");
-	//scanf("%d",&len);
-	printIntArr(test,len);
-	bubbleSort(test,len);
-	printf("\n");
-	printIntArr(test,len);
+	int len=20;
+	int* array;
+	
+	printf("Bitte Anzahl der Werte eingeben:\n");
+	scanf("%d",&len);
+	array=inpIntArr(len);
+	bubbleSort(array,len);
+	printIntArr(array,len);
+	
 	int n=0;
 	printf("Bitte Zahl eingeben:\n");
 	scanf("%d",&n);
-	printf("Linear Search findet %d bei %d\n",n,linearSearch(n,test,len));
-	printf("Binary Search findet %d bei %d\n",n,binarySearch(n,test,len));
+	printf("Linear Search findet %d bei %d\n",n,linearSearch(n,array,len));
+	printf("Binary Search findet %d bei %d\n",n,binarySearch(n,array,len));
+	
 	return(0);
 }
