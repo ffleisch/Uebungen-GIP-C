@@ -1,0 +1,6 @@
+//aufgabe1.c
+//Übung 9 Aufgabe 1 GIP 
+//Felix Fleisch Gruppe Die. 14-18 170945
+
+
+unsigned char test[]={2,2,2,5,5,5,4,7,8,9,9,8,9,7,5,6,1,8,2,6};
