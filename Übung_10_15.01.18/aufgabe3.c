@@ -27,11 +27,10 @@ void createSqr(int* arr,int n){
 	}
 	for(int i=0;i<n*n-1;i++){
 		*(arr+(n)*y+x)=sum;
-		
 		int a,b=0;
 		
 		
-		printf("x:%d y:%d a:%d b:%d sum:%d\n",x,y,a,b,sum);
+		//printf("x:%d y:%d a:%d b:%d sum:%d\n",x,y,a,b,sum);
 		a=loopAround(x+1,n);
 		b=loopAround(y+1,n);
 		if(*(arr+n*b+a)==n*n){
