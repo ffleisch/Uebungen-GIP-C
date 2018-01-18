@@ -7,7 +7,6 @@
 
 int loopAround(int in,int n){
 	int out=in;
-	
 	while(out<0){
 		out+=n;
 	}
@@ -20,27 +19,24 @@ int loopAround(int in,int n){
 void createSqr(int* arr,int n){
 	int x=n/2;
 	int y=n-1;
-	printf("Start: %d %d\n",x,y);
 	int sum=1;
 	for(int i=0;i<n*n;i++){
-		arr[i]=n*n;
+		arr[i]=-1;
 	}
-	for(int i=0;i<n*n-1;i++){
+	for(int i=0;i<n*n;i++){
 		*(arr+(n)*y+x)=sum;
 		int a,b=0;
 		
-		
-		//printf("x:%d y:%d a:%d b:%d sum:%d\n",x,y,a,b,sum);
 		a=loopAround(x+1,n);
 		b=loopAround(y+1,n);
-		if(*(arr+n*b+a)==n*n){
+		if(*(arr+n*b+a)==-1){
 			x=a;
 			y=b;
 		}else{
 			do{
 				a=loopAround(a-1,n);
 				b=loopAround(b+1,n);
-			}while(*(arr+n*b+a)!=n*n);
+			}while((*(arr+n*b+a)!=-1)&&i<n*n-1);
 			x=a;
 			y=b;
 		}
@@ -53,7 +49,7 @@ void prntSqr(int* arr,int n){
 	for(int i=0;i<n;i++){
 		printf("\n\n");
 		for(int m=0;m<n;m++){
-			printf("  %3d",*(arr+n*i+m));
+			printf("  %5d",*(arr+n*i+m));
 		}
 		printf("\n\n");
 	}

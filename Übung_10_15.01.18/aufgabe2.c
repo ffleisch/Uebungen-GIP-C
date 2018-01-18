@@ -16,7 +16,6 @@ int linearSearch(int n,int a[],int len){
 	return(-1);
 }
 
-//TODO debug this shit
 int binarySearch(int n, int a[],int len){
 
 	int ul=len-1;
@@ -29,12 +28,13 @@ int binarySearch(int n, int a[],int len){
 			ul-=p;
 		}
 	}
-	if(a[ul]==n){
-		return(ul);
+	if(a[ll]==n){
+		return(ll);
 	}else{
 		return(-1);
 	}
 }
+
 void bubbleSort(int a[], int len){
 	for(int i=0;i<len;i++){
 		for(int m=0;m<len-1;m++){
