@@ -1,5 +1,5 @@
-//aufgabe1.c
-//Übung 9 Aufgabe 1 GIP 
+//aufgabe2.c
+//Übung 10 Aufgabe 2 GIP 
 //Felix Fleisch Gruppe Die. 14-18 170945
 
 #include <stdio.h>
