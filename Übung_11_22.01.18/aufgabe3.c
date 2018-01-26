@@ -6,8 +6,6 @@
 #include <string.h>
 #include <ctype.h>
 
-
-
 void encipher(char string[],char erg[],int key){
 	strcpy(erg,string);
 	for(int i=0;string[i]!=0;i++){
@@ -57,8 +55,7 @@ int main(){
 	encipher(input,ergebnis,n);
 	printf("Verschluesselt: %s\n",ergebnis);
 
-	for(int i=0;i<26;i++){
-		
+	for(int i=0;i<26;i++){	
 		decipher(aufgabe,ergebnis,i);
 		printf("\n%s\n\n",ergebnis);	
 	}
