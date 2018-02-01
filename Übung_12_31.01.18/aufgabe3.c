@@ -36,7 +36,6 @@ int parNum(char c){
 			break;
 		default:
 			return(0);
-			break;
 	}
 }
 
@@ -71,5 +70,4 @@ int main(){
 	}else{
 		printf("Korrekt geklammert!\n");
 	}
-
 }
