@@ -6,13 +6,12 @@
 #include<stdlib.h>
 
 void push(char val,char** stk){
-	**stk=val;
 	(*stk)++;
+	**stk=val;
 };
 
 char pop(char** stk){
-	(*stk)--;
-	return(*(*stk+1));
+	return(*((*stk)--));
 }
 
 int parNum(char c){
@@ -46,21 +45,18 @@ int checkPar(char str[]){
 	char* base=stack;
 	int erg=1;
 	for(int i=0;str[i]!=0;i++){
-		if(parNum(str[i])>0){
+		int pnum=parNum(str[i]);
+		if(pnum>0){
 			push(str[i],&stack);
 		}
-		if(parNum(str[i])<0){
-			if(parNum(str[i])+pop(&stack)!=0){
+		if(pnum<0){
+			if(pnum+parNum(pop(&stack))){
 				erg=0;
 			}
 		}
 	}
 	if(stack!=base){
 		erg=0;
-	}
-	while(base!=stack){
-		char t=pop(&stack);
-		printf("%c\n",t);
 	}
 	free(stack);
 	return(erg);
@@ -69,9 +65,8 @@ int checkPar(char str[]){
 int main(){
 	char inp[10000];
 	printf("Bitte String eingeben\n");
-
 	scanf("%s",inp);
-	if(checkPar(inp)){
+	if(checkPar(inp)==0){
 		printf("Nicht korrekt geklammert!\n");
 	}else{
 		printf("Korrekt geklammert!\n");
