@@ -30,6 +30,7 @@ void append(int val,struct node* l){
 void insertFirst(int val,struct node** list){
 	struct node* new=malloc(sizeof(struct node));
 	new->data=val;
+	new->prev=NULL;//hinzugefügt am Donnerstag nach dem Abgeben
 	new->next=*list;
 	(*list)->prev=new;
 	*list=new;
